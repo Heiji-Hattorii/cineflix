@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<head>
+    <title>CineFlix</title>
+    <style>
+        body{
+            /*background-image: url(US-en-20221128-popsignuptwoweeks-perspective_alpha_website_large.jpg.svg);*/
+            background-position: top right;
+            background-size: cover;
+        }
+
+        header{
+            background-color: #fff;
+            display:grid;
+            grid-template-columns:  8% 75% 15%;
+            align-items: center;
+            margin-bottom:2%;
+    
+        }
+        header img{
+            width:100%;
+            display:flex;
+            
+        }
+        
+        .recherche{
+            width:100%;
+            height:6vh;
+            background-color: #D9D9D9;
+            display:grid;
+            grid-template-columns: 3% 94% 3%;
+            align-items:center ;
+            font-size:0.8rem;
+            color:#5D5B5B;
+        }
+        
+        .recherche img{
+            justify-self: center;
+            width:60%;
+            
+        }
+        header ul{
+            list-style-type: none;
+            display:grid;
+            grid-template-columns: 50% 50%;
+            justify-content: flex-start;
+            color:#F88D35;            
+            font-weight: bolder;
+            
+        }
+        header li{
+            margin:-2%;
+        }
+        .divy{
+            display:flex;
+            justify-content: center;
+        }
+        .sec{
+            display:flex;
+            justify-content: space-around;
+            align-items:center;
+            
+        }
+        .recherche input {
+             background-color:  #ecebeb;
+             border:none;
+             height:90%;;
+        }
+        .wlc{
+            width:30%;
+            color:#ff7700;
+            text-align: center;
+        }
+        .wlc h1{
+            font-size: 3rem;
+            
+        }
+        .wlc p{
+            font-size:1.5rem;
+            color:#F88D35
+        }
+        .carrousel{
+            width:60%;
+            height:65vh;
+            position:relative;
+            display:flex;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #444343;
+            margin-bottom:5%;
+            
+        }
+        .carrousel .photo{
+            display:none;
+            width:100%;
+            height:100%;
+            /*animation:translation 9s infinite ease-in-out;*/
+        }
+        .photo.active {
+            display: block; 
+            transform: translateX(-100%)  ease-in-out;
+        }
+        .carrousel.paused .photo {
+            animation-play-state: paused;
+        }
+        
+        .carrousel img{
+        width:15px;
+}
+        .btn1{
+            position:absolute;
+            left:5%;
+        }
+        .btn2{
+            position:absolute;
+            right:5%;
+        }
+        
+        .films{
+            display:grid;
+            grid-template-columns:13% 13% 13% 13% 13% 13% 13%;
+            justify-content:space-around;
+            row-gap: 2%;
+        }
+        .film img{
+            border-radius:10px 10px 0 0 ;
+            width:100%;
+            height:70%
+        }
+        .film{
+            border-radius: 10px;
+            cursor: pointer;
+            background-color:#F88D35;
+            color:#502501;
+            
+        }
+
+        .film p + .film h4{
+            display:inline;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div><img src="logo4-removebg-preview.png" alt=""></div>
+        
+            <div class="divy" >
+                <div class="recherche">
+                <img src="icons8-search-50.svg" alt="">
+                <input type="search" placeholder="Rechercher" >
+                <img src="icons8-clear-filters-48.png" alt="">
+            </div>
+        </div>
+        <ul>
+            <li>Home</li>
+            <li>Profile</li>
+        </ul>
+    </header>
+   
+    <section class="sec">
+        <div class="wlc">
+            <h1>Bienvenue sur CineFlix !</h1>
+            <p>Découvrez une sélection de films pour tous les goûts, avec une expérience fluide et des recommandations personnalisées. Prêt pour des soirées cinéma inoubliables ?</p>
+        </div>
+    <div class="carrousel">
+        <img src="film1.jpg"  class="photo active" alt="">
+        <img src="film4.jpg"  class="photo" alt="">
+        <img src="film9.jpg"  class="photo" alt="">
+        <img src="film7.jpg"  class="photo" alt="">
+        <img src="film8.jpg"  class="photo" alt="">
+        <div class="btn1">
+            <img src="Polygon 2.svg" alt="" id="bttn1" onclick="precedent()">
+        </div>
+        <div class="btn2">
+            <img src="Polygon 1.svg" alt=""id="bttn2" onclick="suivant()">
+        </div>
+    </div>
+    </section>
+    <section>
+        <div class="films">
+            <div class="film">
+                <img src="MV5BNGNjMjVmODYtMGMzZi00MWUyLTk1ZDQtYzI2ZTk2MmYzYTZiXkEyXkFqcGc@._V1_FMjpg_UY2192_.jpg" alt="Detective Conan">
+                <h4>Case closed</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+            </div>
+            <div class="film">
+                <img src="MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1024_.jpg" alt="Detective Conan">
+                <h4>One Piece </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BNjY4MDQxZTItM2JjMi00NjM5LTk0MWYtOTBlNTY2YjBiNmFjXkEyXkFqcGc@._V1_FMjpg_UX889_.jpg" alt="Detective Conan">
+                <h4>Attack on titan</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Detective Conan">
+                <h4>Naruto</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX680_.jpg" alt="Detective Conan">
+                <h4>Dororo</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BMGQ4ZGJhZTUtZDQ5Mi00NTI1LWEyYjItMzIxM2VlNmY4MDEyXkEyXkFqcGc@._V1_FMjpg_UX640_.jpg" alt="Detective Conan">
+                <h4>The Promised Neverland </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BZWI2NzZhMTItOTM3OS00NjcyLThmN2EtZGZjMjlhYWMwODMzXkEyXkFqcGc@._V1_FMjpg_UX1129_.jpg" alt="Detective Conan">
+                <h4>Tokyo Ghoul </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BNGNjMjVmODYtMGMzZi00MWUyLTk1ZDQtYzI2ZTk2MmYzYTZiXkEyXkFqcGc@._V1_FMjpg_UY2192_.jpg" alt="Detective Conan">
+                <h4>Case closed</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+            </div>
+            <div class="film">
+                <img src="MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1024_.jpg" alt="Detective Conan">
+                <h4>One Piece </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BNjY4MDQxZTItM2JjMi00NjM5LTk0MWYtOTBlNTY2YjBiNmFjXkEyXkFqcGc@._V1_FMjpg_UX889_.jpg" alt="Detective Conan">
+                <h4>Attack on titan</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Detective Conan">
+                <h4>Naruto</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BYzk2ODAyZjctNjExNS00ZDk0LWE1ZDMtZmIyNzI2NjNjNjllXkEyXkFqcGc@._V1_FMjpg_UX680_.jpg" alt="Detective Conan">
+                <h4>Dororo</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BMGQ4ZGJhZTUtZDQ5Mi00NTI1LWEyYjItMzIxM2VlNmY4MDEyXkEyXkFqcGc@._V1_FMjpg_UX640_.jpg" alt="Detective Conan">
+                <h4>The Promised Neverland </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="film">
+                <img src="MV5BZWI2NzZhMTItOTM3OS00NjcyLThmN2EtZGZjMjlhYWMwODMzXkEyXkFqcGc@._V1_FMjpg_UX1129_.jpg" alt="Detective Conan">
+                <h4>Tokyo Ghoul </h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            
+        </div>
+    </section>
+    <script>
+
+var x = 0;
+var time=2600;
+        
+        function stopAutoPlay() {
+            const carrousel = document.querySelector('.carrousel');
+            carrousel.classList.add('paused');
+        }
+        
+        function precedent() {
+            stopAutoPlay();
+            let photos = document.getElementsByClassName('photo');
+            if (x > 0) {
+                photos[x].classList.remove('active'); 
+                x--; 
+                photos[x].classList.add('active');
+            } else {
+                photos[x].classList.remove('active'); 
+                x = photos.length - 1; 
+                photos[x].classList.add('active'); 
+            }
+        }
+        
+        function suivant() {
+            stopAutoPlay();
+            let photos = document.getElementsByClassName('photo');
+            if (x < photos.length - 1) {
+                photos[x].classList.remove('active'); 
+                x++;
+                photos[x].classList.add('active');
+            } else {
+                photos[x].classList.remove('active'); 
+                x = 0; 
+                photos[x].classList.add('active'); 
+            }
+           
+        }
+        setInterval(() => {
+            suivant(); 
+        }, time); 
+        let text =document.querySelector("input");
+        let films=document.querySelectorAll('.film');
+        console.log(films);
+        text.addEventListener("keyup", (e) => {
+            let carrousel=document.querySelector(".sec");
+            carrousel.style.display="none";
+           let value= e.target.value;
+           films.forEach(film => {
+        let titre = film.querySelector("h4").textContent.toLowerCase(); 
+        if (titre.includes(value)) {
+            film.style.display = "block"; 
+        } else {
+            film.style.display = "none"; 
+        }
+    });
+        })
+    </script>
+    
+</body>
+
+</html>
